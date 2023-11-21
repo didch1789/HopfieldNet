@@ -26,6 +26,10 @@ for it = 1:100
     Xt(Xt > 0) = 1;
     Xt(Xt < 0) = -1;
 end
+
+imshow(reshape(Xt, 40, 40))
+
+
 (abs(cellfun(@(x) corr(Xt', x), y_vecs)))
 [~, maxidx]= max(abs(cellfun(@(x) corr(Xt', x), y_vecs)));
 PIs(maxidx)
